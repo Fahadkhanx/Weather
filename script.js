@@ -6,17 +6,17 @@ async function getWeatherData() {
         const response = await fetch(API_URL);
         const data = await response.json();
         
-        // Update the UI
+   
         document.getElementById('weatherSummary').textContent = data.weather[0].description;
         document.getElementById('temperature').textContent = Math.round(data.main.temp);
         document.getElementById('pressure').textContent = data.main.pressure;
         document.getElementById('humidity').textContent = data.main.humidity;
         
-        // Format and display last updated time
+      
         const lastUpdated = new Date().toLocaleString();
         document.getElementById('lastUpdated').textContent = lastUpdated;
         
-        // Update background based on time of day
+       
         updateBackground();
         
     } catch (error) {
